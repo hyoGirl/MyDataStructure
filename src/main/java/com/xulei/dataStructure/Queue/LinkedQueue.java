@@ -1,6 +1,7 @@
 package com.xulei.dataStructure.Queue;
 
-import com.data.list.linkedList.single.Node;
+
+import com.xulei.dataStructure.List.linkedList.single.Node;
 
 import java.util.NoSuchElementException;
 

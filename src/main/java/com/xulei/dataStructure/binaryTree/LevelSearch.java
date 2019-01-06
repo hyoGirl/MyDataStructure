@@ -3,7 +3,8 @@
  */
 package com.xulei.dataStructure.binaryTree;
 
-import com.queue.array.SequenceQueue;
+
+import com.xulei.dataStructure.Queue.SequenceQueue;
 
 import java.util.LinkedList;
 import java.util.Queue;
