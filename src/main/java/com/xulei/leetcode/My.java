@@ -1,4 +1,7 @@
 package com.xulei.leetcode;
 
-public class One {
+/**
+ *
+ */
+public class My {
 }
