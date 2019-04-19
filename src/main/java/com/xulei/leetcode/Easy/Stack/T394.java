@@ -33,11 +33,8 @@ public class T394 {
                     str = stack.pop()+str;
                 }
                 stack.pop();//[
-
                 String count = "";
-
                 while (!stack.isEmpty() && (stack.peek().charAt(0) >= '0' && stack.peek().charAt(0) <= '9')) {
-
                     count = stack.pop()+count;
                 }
                 int counts = Integer.valueOf(count);
@@ -46,7 +43,6 @@ public class T394 {
                     data = str+data;
                 }
                 stack.push(data);
-
             } else {
                 //如果是数字，字母 以及【 就直接入栈
                 String data = "" + s.charAt(i);
