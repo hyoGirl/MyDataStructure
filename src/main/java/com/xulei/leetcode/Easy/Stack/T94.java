@@ -34,7 +34,7 @@ public class T94 {
         List<Integer> resList = new ArrayList<>();
 
 
-        //这个地方有错误，输入[] 返回的却是null。结果应该是[]
+        //这个地方有错误，输入[] 返回的却是null。结果应该是[].应该修改为返回resList
 //        if (root == null) {
 //            return null;
 //        }

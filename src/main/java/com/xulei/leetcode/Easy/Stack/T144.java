@@ -32,26 +32,20 @@ public class T144 {
         List<Integer> resList = new ArrayList<>();
         if (root != null) {
             stack.push(root);
-            while (!stack.isEmpty() || root != null) {
-
-                TreeNode pop = stack.pop();
-
-                resList.add(pop.val);
-
+            while (!stack.isEmpty()) {
+                root = stack.pop();
+                resList.add(root.val);
                 if (root.right != null) {
-
                     stack.push(root.right);
                 }
                 if (root.left != null) {
-
                     stack.push(root.left);
                 }
             }
-        }else{
-            return null;
+        } else {
+            return resList;
         }
-
-        return  resList;
+        return resList;
     }
 
 
