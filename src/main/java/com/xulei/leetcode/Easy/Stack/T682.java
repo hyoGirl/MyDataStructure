@@ -5,7 +5,7 @@ import java.util.Stack;
 /**
  * 棒球比赛
  */
-public class Test682 {
+public class T682 {
 
 //
 //    你现在是棒球比赛记录员。

@@ -3,7 +3,7 @@ package com.xulei.leetcode.Easy.Stack;
 /**
  * 下一个更大元素 I
  */
-public class Test496 {
+public class T496 {
 
 
     /**

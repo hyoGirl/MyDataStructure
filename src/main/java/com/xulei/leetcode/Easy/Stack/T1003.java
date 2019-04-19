@@ -63,7 +63,10 @@ public class T1003 {
         for(char ch:chars){
             if(ch == 'c'){
                 if(!stack.isEmpty()&&  stack.pop()=='b'  && !stack.isEmpty()&&  stack.pop()=='a'){
-                    return true; //此时的return 就会返回true  停止了程序不再运行，但是后面还是有数据加入
+
+                    //此时的return 就会返回true  停止了程序不再运行，但是后面还是有数据加入
+                    //所以只能从反面来判断
+                    return true;
                 }
             }else{
                 stack.push(ch);

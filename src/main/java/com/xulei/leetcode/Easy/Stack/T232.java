@@ -5,7 +5,7 @@ import java.util.Stack;
 /**
  * 用栈来实现队列
  */
-public class Test232 {
+public class T232 {
 
 
     /**
@@ -25,7 +25,7 @@ public class Test232 {
     /**
      * Initialize your data structure here.
      */
-    public Test232() {
+    public T232() {
 
         this.stack1 = new Stack<>();
         this.stack2 = new Stack<>();

@@ -7,7 +7,7 @@ import com.xulei.dataStructure.Queue.Queue;
 /**
  * 用队列来实现栈
  */
-public class Test225 {
+public class T225 {
 
 
 
@@ -35,7 +35,7 @@ public class Test225 {
     private int size;
 
 
-    public  Test225(){
+    public T225(){
 
         this.queue1=new LinkedQueue<Integer>();
         this.queue2=new LinkedQueue<Integer>();
