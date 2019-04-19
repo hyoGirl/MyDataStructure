@@ -26,8 +26,6 @@ public class T144 {
 
 
     public List<Integer> preorderTraversal(TreeNode root) {
-
-
         Stack<TreeNode> stack = new Stack<TreeNode>();
         List<Integer> resList = new ArrayList<>();
         if (root != null) {
