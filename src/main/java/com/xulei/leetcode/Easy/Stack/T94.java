@@ -23,22 +23,31 @@ public class T94 {
      */
 
 
+    /**
+     *
+     * 如果栈不是空的，先把根节点入栈，然后就是组左子树入栈，左边全部入栈完毕后，
+     * 弹出，然后再弹出根节点，跟节点弹出后。接着就是右边子树入栈，右边入栈完毕后，再弹出
+     *
+     */
     public List<Integer> inorderTraversal(TreeNode root) {
         Stack<TreeNode> stack = new Stack<>();
         List<Integer> resList = new ArrayList<>();
+
+
+        //这个地方有错误，输入[] 返回的却是null。结果应该是[]
+//        if (root == null) {
+//            return null;
+//        }
         while (root != null || !stack.isEmpty()) {
-            while (root != null || root.left != null) {
-                stack.push(root.left);
+            while (root != null) {
+                stack.push(root);
                 root = root.left;
             }
-            TreeNode pop = stack.pop();
-            resList.add(pop.val);
-            if (root.right != null) {
-                stack.push(root.right);
-                root = root.right;
-            }
+            root = stack.pop();
+            resList.add(root.val);
+            //不需要判断root的右边子树是不是为空。因为上面的循环在判断
+            root = root.right;
         }
-
         return resList;
     }
 }
