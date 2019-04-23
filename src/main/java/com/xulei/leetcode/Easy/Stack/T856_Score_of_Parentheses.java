@@ -26,37 +26,37 @@ public class T856_Score_of_Parentheses {
 //    输出： 2
 
 
-    public static int scoreOfParentheses(String S) {
-
-
-        Stack<Character>  stack=new Stack<>();
-
-        char[] chars = S.toCharArray();
-
-        int score=0;
-
-        for (int i = 0; i < chars.length ; i++) {
-
-           char ch= chars[i];
-
-           if(ch==')'){
-
-               while(!stack.isEmpty() && stack.peek()=='('){
-                   stack.pop();
-                   score+=1;
-               }
-
-           }else{
-               stack.push(ch);
-           }
-
-
-
-        }
-        
-        
-
-
-    }
+//    public static int scoreOfParentheses(String S) {
+//
+//
+//        Stack<Character>  stack=new Stack<>();
+//
+//        char[] chars = S.toCharArray();
+//
+//        int score=0;
+//
+//        for (int i = 0; i < chars.length ; i++) {
+//
+//           char ch= chars[i];
+//
+//           if(ch==')'){
+//
+//               while(!stack.isEmpty() && stack.peek()=='('){
+//                   stack.pop();
+//                   score+=1;
+//               }
+//
+//           }else{
+//               stack.push(ch);
+//           }
+//
+//
+//
+//        }
+//
+//
+//
+//
+//    }
 
 }
