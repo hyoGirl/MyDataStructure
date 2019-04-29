@@ -31,6 +31,9 @@ public class LongestCommonPrefix {
 
                 if(prefix==""){
                     return "";
+
+
+                    
                 }
 
             }

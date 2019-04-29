@@ -3,7 +3,7 @@ package com.xulei.leetcode.Easy.Stack;
 /**
  * 921. 使括号有效的最少添加
  */
-public class T921 {
+public class T921MinimumAddtoMakeParenthesesValid {
 
 
 //    给定一个由 '(' 和 ')' 括号组成的字符串 S，我们需要添加最少的括号（ '(' 或是 ')'，可以在任何位置），以使得到的括号字符串有效。
