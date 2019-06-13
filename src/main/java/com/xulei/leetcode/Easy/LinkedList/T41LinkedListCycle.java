@@ -16,14 +16,11 @@ public class T41LinkedListCycle {
      */
 
     public static boolean hasCycle(ListNode head) {
-
         if(head==null || head.next==null){
             return false;
         }
-
         ListNode fast=head;
         ListNode slow=head;
-
         while(fast!=null && slow!=null){
             fast=fast.next.next;
             slow=slow.next;
@@ -32,7 +29,6 @@ public class T41LinkedListCycle {
             }
         }
         return false;
-
     }
 
     /**
