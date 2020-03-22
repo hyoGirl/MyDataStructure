@@ -17,12 +17,8 @@ public class T739 {
 
 //        int[] res={74, 73, 75, 71, 69, 72, 76, 73};
         int[] res={73, 74, 75, 71, 69, 72, 76, 73};
-
         int[] ints = dailyTemperatures(res);
-
         System.out.println(Arrays.toString(ints));
-
-
     }
 
     //找出数组中大于当前元素的第一个元素，到当前元素的距离
@@ -33,10 +29,7 @@ public class T739 {
         Stack<Integer> stack = new Stack<>();
         // 初始化所有的元素为0
         int[] res = new int[T.length];
-
-
         for(int i = 0; i < T.length; ++i){
-
             while(!stack.isEmpty() && T[i] > T[stack.peek()]){
                 int temp = stack.pop();
                 System.out.println(temp);
