@@ -31,6 +31,11 @@ public class MinStack {
         }
     }
 
+    /**
+     * 重点在这里，如果第一个栈没有值，那么第二个栈也不会存在的，因为第一个栈的数据会永远多余第二个栈。
+     *
+     * 这个和模拟队列不一样
+     */
     public void pop() {
         if (stack.isEmpty()) {
             return;
