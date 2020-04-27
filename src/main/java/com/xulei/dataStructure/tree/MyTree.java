@@ -33,7 +33,7 @@ public class MyTree {
         }
         // 按照完美的二叉树来创建  数组下标从0开始计算的，但是二叉树的第一位是根，左边是奇数，右边就是偶数 下标了
         int size=length/2-1;
-
+        // 注意，这里没有写等号，是为了保证前面的父节点都能有左右子树
         for (int i = 0; i < size; i++) {
             if(null!=temps.get(i*2+1)){
                 temps.get(i).leftNode=temps.get(i*2+1);
