@@ -28,16 +28,17 @@ public class ThreadedBinaryTree {
 			nodeList.add(new TBTNode(array[i]));
 		}
 		for(int j=0;j<array.length/2-1;j++){
-			
-			nodeList.get(j).leftNode=nodeList.get(j*2+1);
-			
-			nodeList.get(j).rightNode=nodeList.get(j*2+2);
+			if(null!=nodeList.get(j*2+1)){
+				nodeList.get(j).leftNode=nodeList.get(j*2+1);
+			}
+			if(null!=nodeList.get(j*2+2)){
+				nodeList.get(j).rightNode=nodeList.get(j*2+2);
+			}
 		}
-		
-		//最后一个节点可能没有右边孩子，   是一个满二叉树
-		
+
+		// 最后一个父亲节点，不一定有孩子
 		int index=array.length/2-1;
-		
+		// 左边孩子
 		nodeList.get(index).leftNode=nodeList.get(2*index+1);
 		// 右孩子,如果数组的长度为奇数才建立右孩子  
 		if(array.length%2==1){
