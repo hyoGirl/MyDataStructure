@@ -1,8 +1,6 @@
 package com.xulei.dataStructure.tree;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 /**
  * @author XULEI
@@ -21,6 +19,10 @@ public class MyTree {
 //        prePrint(temps.get(0));
 //        inOrderPrint(temps.get(0));
 //        prePrint2(temps.get(0));
+//        inOrderPrint2(temps.get(0));
+
+//        cengXu(temps.get(0));
+
         inOrderPrint2(temps.get(0));
 
     }
@@ -115,34 +117,73 @@ public class MyTree {
             }
     }
 
-
     /**
-     * 中序遍历，非递归
+     * 中序遍历，非递归  中序遍历，就是左 根 右 一定要左边子树全部访问完毕，才去访问根，根访问完毕了，再去访问右边
+     * 此时右边又变成了根。所以，先根入栈，左边入栈， 左边出站 根出站  然后右边入栈
+     * 一定要先全部压左边
      * @param node
      */
     public static void inOrderPrint2(MyNode node){
-
         if(null==node){
             return ;
         }
         Stack<MyNode> stack=new Stack<>();
+        stack.push(node);
         while(!stack.isEmpty()){
-            MyNode rightNode = node.rightNode;
-            if(null!=rightNode){
-                stack.push(rightNode);
-            }
-            stack.push(node);
-            if(null!=node.leftNode){
+            while (null!=node.leftNode && null!=node){
                 stack.push(node.leftNode);
-            }else{
-                MyNode pop = stack.pop();
-                print(pop);
+                node=node.leftNode;
+            }
+            node=stack.pop();
+            print(node);
+            if(null!=node.rightNode){
+                node=node.rightNode;
+                stack.push(node);
             }
         }
+    }
+
+    /**
+     * 层序遍历二叉树
+     * @param node
+     */
+    public static void cengXu(MyNode node){
+        /**
+         * 每一个根节点，都可能有左右子树，先把当前的节点的左右子树放入队列中
+         * 然后，把当前节点弹出，接下来头部就是兄弟节点了，此时，在把自己节点的左右子树放入，循环就好
+         */
+        if(null == node){
+            return ;
+        }
+        Queue<MyNode> queue=new  LinkedList<MyNode>();
+        queue.add(node);
+        while(!queue.isEmpty()){
+            MyNode myNode = queue.poll();
+            print(myNode);
+            if(null!=myNode.leftNode){
+                queue.add(myNode.leftNode);
+            }
+            if(null!=myNode.rightNode){
+                queue.add(myNode.rightNode);
+            }
+        }
+    }
+
+    /**
+     * 获取二叉树的宽度 二叉树的宽度是指含有最多节点数的对应层对应的节点数
+     * @return
+     */
+    public static Integer getWidth(){
 
 
+        /**
+         * 先设置临时变量，保存当前队列的长度，如果值为0 就表示该层全部弹出了，此时剩下的值就是下一层的最大数
+         */
+
+        return 0;
 
     }
+
 
 
 
