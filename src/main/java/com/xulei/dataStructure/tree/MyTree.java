@@ -2,6 +2,7 @@ package com.xulei.dataStructure.tree;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 /**
  * @author XULEI
@@ -11,6 +12,19 @@ import java.util.List;
  * @Version 1.0
  */
 public class MyTree {
+
+
+    public static void main(String[] args) {
+        int[] arr={1,2,4,6,3,8,12};
+        MyTree tree=new MyTree();
+        tree.createTree(arr);
+//        prePrint(temps.get(0));
+//        inOrderPrint(temps.get(0));
+//        prePrint2(temps.get(0));
+        inOrderPrint2(temps.get(0));
+
+    }
+
 
 
     // 临时存储数据
@@ -54,16 +68,7 @@ public class MyTree {
     }
 
 
-    public static void main(String[] args) {
-        int[] arr={1,2,4,6,3,8,12};
-        MyTree tree=new MyTree();
-        tree.createTree(arr);
 
-//        prePrint(temps.get(0));
-
-        inOrderPrint(temps.get(0));
-
-    }
 
     public static void prePrint(MyNode node){
         if(null!=node){
@@ -75,6 +80,24 @@ public class MyTree {
         }
 
     }
+    //非递归前序遍历 前序遍历 是 根 左右   使用栈， 根 进去，出来 右边进去 左边进去，左边出来，右边出来
+    public static void prePrint2(MyNode node){
+        Stack<MyNode> stack=new Stack<>();
+        if(null!=node){
+            stack.push(node);
+            while(!stack.isEmpty()){
+                MyNode myNode = stack.pop();
+                print(myNode);
+                if(null!=myNode.rightNode){
+                    stack.push(myNode.rightNode);
+                }
+                if(null!=myNode.leftNode){
+                    stack.push(myNode.leftNode);
+                }
+            }
+        }
+    }
+
 
     // 中序遍历  左 根 右
     public static void inOrderPrint(MyNode node){
@@ -91,4 +114,44 @@ public class MyTree {
                 inOrderPrint(rightNode);
             }
     }
+
+
+    /**
+     * 中序遍历，非递归
+     * @param node
+     */
+    public static void inOrderPrint2(MyNode node){
+
+        if(null==node){
+            return ;
+        }
+        Stack<MyNode> stack=new Stack<>();
+        while(!stack.isEmpty()){
+            MyNode rightNode = node.rightNode;
+            if(null!=rightNode){
+                stack.push(rightNode);
+            }
+            stack.push(node);
+            if(null!=node.leftNode){
+                stack.push(node.leftNode);
+            }else{
+                MyNode pop = stack.pop();
+                print(pop);
+            }
+        }
+
+
+
+    }
+
+
+
+    public static void print(MyNode node){
+        System.out.println("node-->" +node.getData());
+    }
+
+
+
+
+
 }
